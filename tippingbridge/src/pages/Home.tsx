@@ -1,7 +1,25 @@
 import HeroSlider from '../components/HeroSlider'
+import IconButtons from '../components/IconButtons'
 import { Link } from 'react-router-dom'
+import assistIcon from '../assets/assist.png'
+import docsIcon from '../assets/docs.png'
+import ecIcon from '../assets/ec.png'
+import eventsIcon from '../assets/events.png'
+import investIcon from '../assets/invest.png'
+import pmIcon from '../assets/pm.png'
+import stayIcon from '../assets/stay.png'
 
 export default function Home() {
+  const iconButtons = [
+    { icon: assistIcon, label: 'Assist', link: '/services' },
+    { icon: docsIcon, label: 'Docs', link: '/services' },
+    { icon: ecIcon, label: 'Elderly Care', link: '/services' },
+    { icon: eventsIcon, label: 'Events', link: '/services' },
+    { icon: investIcon, label: 'Invest', link: '/services' },
+    { icon: pmIcon, label: 'Property', link: '/services' },
+    { icon: stayIcon, label: 'Stay', link: '/services' },
+  ]
+
   const highlights = [
     { title: 'Property Management', text: 'End‑to‑end care for your home in India.', link: '/services' },
     { title: 'Elderly Care', text: 'Compassionate, reliable support for your loved ones.', link: '/services' },
@@ -12,6 +30,9 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <HeroSlider />
+
+      {/* Icon Buttons Section */}
+      <IconButtons buttons={iconButtons} />
 
       {/* About Preview */}
       <section className="section-padding bg-gradient-to-b from-brandCream to-white" id="about-preview">
